@@ -10,7 +10,7 @@
   
 
   
-  <meta name="description" content="After the SEM course instructed by my supervisor, some of other students began to ask me some questions about stats. Recently, I’m helping one of my p">
+  <meta name="description" content="After the SEM course last semester, some students began to ask me some questions about stats. Recently, I’m helping one of my peers in doing SEM model">
   
 
   
@@ -90,16 +90,101 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>After the SEM course instructed by my supervisor, some of other students began to ask me some questions about stats. Recently, I’m helping one of my peers in doing SEM model, regression, mediation, and moderation. After I taught them some of the basic stats, I found actually there’re lots of similar questions and they seems to lack a holistic understanding about the basic stats that are commenly used in communication. So I have been planning to write some notes about stats based on my own understanding and hopefully, these tutorials may be helpful to learn the basic stats in communication.</p>
-<p>First of all</p>
-<p>From my experience in learning stats, there are two points that are really hard for me to understand the idea of statistics: one is the p-value, the other is latent variable.</p>
-<hr />
+        <p>After the SEM course last semester, some students began to ask me some questions about stats. Recently, I’m helping one of my peers in doing SEM model, regression, mediation, and moderation. After I taught them some of the basic stats, I found actually there’re lots of similar questions and they seems to lack a holistic understanding about the basic stats that are commenly used in communication. So I have been planning to write some notes about stats based on my own understanding and hopefully, these tutorials may be helpful to learn the basic stats in communication.</p>
+<p>From my experience in learning stats, there are only three questions that need to pay attention to if the aim is only application:</p>
+<ol>
+<li>What’s the aim of the statistical tool;</li>
+<li>What are the criteria to make judgement (i.e., what results in the output should be looked at and what should be reported);</li>
+<li>How to get the results by software* and what indices/coefficients should be reported;</li>
+</ol>
+<p>*For this question, I wanted to remember the steps and syntax when I was a beginner. But now I never try to remember the steps and syntax. I only require myself to know what the steps/syntax are used for (if it’s syntax, then I need to know how to interpret the syntax), and where I can find the steps/syntax (e.g., google or tutorial) and then relearn the steps every time I need to use it.</p>
+<p>The table below lists the basic stats method that most commenly used (note that the language I used here is not very accurate and professional, because I think professional language sometimes impede understanding):</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Statistical test</strong></td>
+<td><strong>Aim</strong></td>
+<td><strong>Criteria</strong></td>
+<td><strong>Software</strong></td>
+</tr>
+<tr>
+<td>t-test</td>
+<td>Compare means (2 groups)</td>
+<td>H0: means are equal. p&lt;0.05, the two means are different</td>
+<td>SPSS</td>
+</tr>
+<tr>
+<td>ANOVA</td>
+<td>Compare means (3 or more groups)</td>
+<td>H0: means are equal. p&lt;0.05, the means are different. Post-hoc to compare each pair of means.</td>
+<td>SPSS</td>
+</tr>
+<tr>
+<td>Chi-square test</td>
+<td>Correlation between two nominal/ordinal variables</td>
+<td>H0: no relationship. p&lt;0.05 -&gt; related.</td>
+<td>SPSS</td>
+</tr>
+<tr>
+<td>Correlation</td>
+<td>Correlation between two variables (zero-order, which means without controlling other variables)</td>
+<td>H0: no relationship. p&lt;0.05 -&gt; related.</td>
+<td>SPSS</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>Multivariable correlation</td>
+<td>H0: coefficient = 0. p&lt;0.05 -&gt; coefficient is not zero -&gt; have a relationship; the coefficient is negative or positive.</td>
+<td>SPSS</td>
+</tr>
+<tr>
+<td>Mediation</td>
+<td>Mediation</td>
+<td>Examining the products of two coefficients. Bootstrapping method is now widely used to examine that. For bootstrapping, 95% CI does not straddle zero. (Same logic with p-value, if contain 0 -&gt; high probability that the coefficient is zero)</td>
+<td>PROCESS/Mplus/AMOS</td>
+</tr>
+<tr>
+<td>Moderation</td>
+<td>Moderation/interaction</td>
+<td>p-value of the interaction term</td>
+<td>SPSS/PROCESS/Mplus</td>
+</tr>
+<tr>
+<td>CFA</td>
+<td><strong>Confirmatory</strong> factor analysis/measurement model (usually to confirm the scale)</td>
+<td>Model fit (e.g., Chi-square/df, CFI, RMSEA, SRMR), Factor loading, CR, AVE</td>
+<td>Mplus/AMOS</td>
+</tr>
+<tr>
+<td>SEM</td>
+<td>Measurement model + structural morel</td>
+<td>Model fit (e.g., Chi-square/df, CFI, RMSEA, SRMR), coefficients of each path</td>
+<td>Mplus/AMOS</td>
+</tr>
+</tbody>
+</table>
+<p>Some notes about this table:</p>
+<ul>
+<li>I think p-value and the idea of latent variable are the two challenges when I was learning them.</li>
+<li>I found many students seems got confused about the difference between EFA and CFA, so I highlighted them in the table.</li>
+</ul>
+<p>I will update some tutorials to explain t-test to moderation with SPSS and PROCESS later on. I’ll try to use very plain language to explain them. If I have time, I’ll update the Chinese versions.</p>
+<!-- *** 
 <center><b>[Below is the Chinese version]</b></center>
 <center><b>[以下是中文版]</b></center>
-<hr />
-<p>上学期结构方程的课结束之后，有一些同学来问我一些统计的问题。最近也帮一个同学讲了一下回归什么的，感觉有必要写一些笔记解释一下，因为有一些重复的问题。另外跟同学讲了回归之后感觉好像还是没有很能对基础的统计有一个稍微完整一点的了解，就是对于不同模型都有什么功能好像不是很清楚。所以打算写一点自己的理解，希望可以有所帮助。</p>
-<p>首先我觉得，基本上需要掌握（不一定会做，但是至少需要有能力解释）的统计方法包括以下几个</p>
-
+I'll update the Chinese version when I have time.
+*** 
+ 上学期结构方程的课结束之后，有一些同学来问我一些统计的问题。最近也帮一个同学讲了一下回归什么的，感觉有必要写一些笔记解释一下，因为有一些重复的问题。另外跟同学讲了回归之后感觉好像还是没有很能对基础的统计有一个稍微完整一点的了解，就是对于不同模型都有什么功能好像不是很清楚。所以打算写一点自己的理解，希望可以有所帮助。
+ 
+ 首先我觉得，基本上需要掌握（不一定会做，但是至少需要有能力解释）的统计方法包括以下几个 -->
       
     </div>
 
