@@ -66,6 +66,70 @@
 
   
     
+    <h3 class="article-title"><a href="/2023/03/31/how-to-plot-interaction-effect-in-regression/"><span>How to plot interaction effect in regression</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/03/31/how-to-plot-interaction-effect-in-regression/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-03-31T02:18:28.000Z">
+          2023-03-31
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>This tutorial is not planned because a friend just asked me about this tool. I think it would be better to write her about the detailed steps.</p>
+<p>She is using <a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1ceRcCpwPgHdUY62tgwWzh5YvgZwYK1uIaH5OyJ-a48U/edit?usp=sharing">the tool for plotting two way interaction effect</a> developed by mu supervisor.The results are gotten by PROCESS Macro Model 1.</p>
+<p>I continue using the same <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/13Dc-W47JtPJUVH_tQjvJVbn2QKVArQax/view?usp=share_link">sample data about environmental knowledge</a> to demonstrate this.</p>
+<p>Regression model:$ Environmental knowledge = \B_{0} + \B_{1} Media use +  \B_{2} Education + \B_{3} Media use \times Education + \B_{4} gender+  \B_{5} age + \B_{6} income + \varepsilon $</p>
+<p>In PROCESS results below, it is equivalent to $EK =  constant + \B_{1} Media +  \B_{2} edu + \B_{3} Int_1 + \B_{4} gender+  \B_{5} age + \B_{6} income + \varepsilon $</p>
+<p>![Interaction model.png](Interaction model.png)<br />
+Then we get the results like below:<br />
+![Inter results.png](Inter results.png)</p>
+<p>Noted that the PROCESS results are unstandardized because there’s a constant term. So for the tool that I shared, I need to use the unstandardized sheet.<br />
+<img src="sheet1.png" alt="sheet1.png" /><br />
+I also need to calculate the standard deviations (SD) of my IV (Media use), moderator (Education), and the interaction term (Int_1).</p>
+<p>I need to calculate the interaction term first. Using SPSS -&gt; transform -&gt; compute variables<br />
+<img src="compute.png" alt="compute.png" /><br />
+The SPSS Analyze -&gt; descriptive statistics -&gt; descriptive, enter Media, edu, and Int_1:<br />
+<img src="SD3.png" alt="SD3.png" /><br />
+So enter the names, SDs, and the coefficients (from PROCESS results)<br />
+<img src="results2.png" alt="results2.png" /><br />
+Enter these numbers, then we can get the plot<br />
+<img src="plot1.png" alt="plot1.png" /></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2023/03/02/Regression/"><span>Linear Regression</span></a></h3>
     
   

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>How to plot interaction effect in regression | Ai Pengya | Be joyful in hope, patient in affliction, faithful in prayer.</title>
+
+  
+  <meta name="author" content="Ai Pengya">
+  
+
+  
+  <meta name="description" content="This tutorial is not planned because a friend just asked me about this tool. I think it would be better to write her about the detailed steps.
+She is ">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="How to plot interaction effect in regression"/>
+
+  <meta property="og:site_name" content="Ai Pengya"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Ai Pengya" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Ai Pengya</a>
+    </h1>
+    <p class="site-description">Be joyful in hope, patient in affliction, faithful in prayer.</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/research">Research</a></li>
+      
+        <li><a href="/">Notes</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>How to plot interaction effect in regression</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/03/31/how-to-plot-interaction-effect-in-regression/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-03-31T02:18:28.000Z">
+          2023-03-31
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>This tutorial is not planned because a friend just asked me about this tool. I think it would be better to write her about the detailed steps.</p>
+<p>She is using <a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1ceRcCpwPgHdUY62tgwWzh5YvgZwYK1uIaH5OyJ-a48U/edit?usp=sharing">the tool for plotting two way interaction effect</a> developed by mu supervisor.The results are gotten by PROCESS Macro Model 1.</p>
+<p>I continue using the same <a target="_blank" rel="noopener" href="https://drive.google.com/file/d/13Dc-W47JtPJUVH_tQjvJVbn2QKVArQax/view?usp=share_link">sample data about environmental knowledge</a> to demonstrate this.</p>
+<p>Regression model:$ Environmental knowledge = \B_{0} + \B_{1} Media use +  \B_{2} Education + \B_{3} Media use \times Education + \B_{4} gender+  \B_{5} age + \B_{6} income + \varepsilon $</p>
+<p>In PROCESS results below, it is equivalent to $EK =  constant + \B_{1} Media +  \B_{2} edu + \B_{3} Int_1 + \B_{4} gender+  \B_{5} age + \B_{6} income + \varepsilon $</p>
+<p>![Interaction model.png](Interaction model.png)<br />
+Then we get the results like below:<br />
+![Inter results.png](Inter results.png)</p>
+<p>Noted that the PROCESS results are unstandardized because there’s a constant term. So for the tool that I shared, I need to use the unstandardized sheet.<br />
+<img src="sheet1.png" alt="sheet1.png" /><br />
+I also need to calculate the standard deviations (SD) of my IV (Media use), moderator (Education), and the interaction term (Int_1).</p>
+<p>I need to calculate the interaction term first. Using SPSS -&gt; transform -&gt; compute variables<br />
+<img src="compute.png" alt="compute.png" /><br />
+The SPSS Analyze -&gt; descriptive statistics -&gt; descriptive, enter Media, edu, and Int_1:<br />
+<img src="SD3.png" alt="SD3.png" /><br />
+So enter the names, SDs, and the coefficients (from PROCESS results)<br />
+<img src="results2.png" alt="results2.png" /><br />
+Enter these numbers, then we can get the plot<br />
+<img src="plot1.png" alt="plot1.png" /></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2023 Ai Pengya
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>
