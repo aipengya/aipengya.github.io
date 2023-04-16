@@ -66,6 +66,103 @@
 
   
     
+    <h3 class="article-title"><a href="/2023/04/16/t-test-and-inferential-statistics/"><span>T Test and Inferential Statistics</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/04/16/t-test-and-inferential-statistics/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-04-16T11:56:19.000Z">
+          2023-04-16
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Today might be a very big day for me as I finally understand my supervisor’s mindset after the Sunday service at church this morning talking about the three mighty warriors get David water. Though I don’t want to share too much personal feelings about this, I might change a lot from now on. That is also why I begin to write this tutorial today cuz I should not hesitate to do right things anymore.</p>
+<p>The reason for introducing t-test is because I think it is very important. Though practically many people may feel like it is not “useful”<a href="#_ftn1">[1]</a>, I think this shows the basis for inferential statistics. I very informally taught this in my TA training class. The students told me it would be better to illustrate what is p-value. But I don’t have time as each student only have 12 mins to do the minor teaching. Sometimes I think t-test might be the most appropriate one to understand what inferential statistics is, which is the fundamental idea of t-test, ANOVA, regression, SEM, etc. Then you know why we need p-value and confidence intervals.</p>
+<p>Usually, t-test is classified into one sample t-test, independent t-test, and paired t-test.</p>
+<p><strong>T-test is aimed to compare means:</strong></p>
+<ul>
+<li>
+<p><strong>One sample t-test is to compare one mean with a number.</strong></p>
+</li>
+<li>
+<p><strong>Independent t-test is to compare two means from two different samples.</strong></p>
+</li>
+<li>
+<p><strong>Paired t-test is to compare means of the same variable in one sample.</strong></p>
+</li>
+</ul>
+<p>I’m not going to talk about paired t-test here because it requires within subject data, which means the data of the same variable is collected from the same participant (e.g., pre/post test in experimental design, or longitudinal data). The idea would be similar to the independent t-test because it’s also comparing two means. The formula would be a bit different. But it doesn’t matter as we have many many software now. 😃</p>
+<p><strong>One sample t-test</strong></p>
+<p>I think one sample -test would be the best to know why we need inferential statistics. Frankly speaking, this question is equal to why we need p-value or confidence intervals to judge whether the hypothesis is supported or not.</p>
+<p>As I mentioned, one sample t-test is to compare whether the mean of a variable is the same as (less or larger than) a number. For example, I measured environmental knowledge (range from 0 to 10) using a survey in China. The data is nationally representative. And I want to know whether the environmental knowledge of Chinese is equal to 7 as I hypothesize it might be 7. Previously I have got the mean value of it, it’s 4.2432 (SPSS -&gt; analyze -&gt; Descriptive statistics -&gt; Descriptives, enter the variable you want to describe).</p>
+<p>Looks like my hypothesis should fail because 4.23 is toooo far away from 7. But I cannot conclude it by this value alone. This is because the sample I got is only 1143 Chinese. Even though it is randomly selected from all the Chinese, it is not the Chinese population. Definitely we cannot measure all Chinese’s environmental knowledge. We can only get some people from the population. Then a question emerges: how could we know the population mean from the sample mean? It is very likely that if we get another 1143, the mean value is different. Therefore, maybe the mean of population is 7 – I got a mean of 4.23 only because I surveyed these people.</p>
+<p>So how could I know if the population mean is not 7. A very smart idea come up by the statisticians is that we cannot know whether exactly the population mean is 7, but we can infer from the sample <strong>how likely</strong> the population mean is this number. We can get the <strong>likelihood or the probability</strong> that the population mean is 7, which is the idea of <strong>p-value</strong>.</p>
+<p>(How to get such a probability is a bit complex question, I will continue to leave my tutorial simple. There are assumptions and formulas. Basically, you need to get the t statistic and compare it with t distribution. You can check some books or <a target="_blank" rel="noopener" href="https://www.jmp.com/en_sg/statistics-knowledge-portal/t-test/one-sample-t-test.html">online sources</a> for more details)</p>
+<p>So in SPSS, I use Analyze -&gt; Compare Means -&gt; One-Sample T Test</p>
+<img src="/2023/04/16/t-test-and-inferential-statistics/p1.jpg" class="" title="t-test">
+<p>Enter Environmental knowledge, which is my interested variable. And change the test value into 7, which is I hypothesized.</p>
+<img src="/2023/04/16/t-test-and-inferential-statistics/p2.jpg" class="" title="t-test">
+<img src="/2023/04/16/t-test-and-inferential-statistics/p3.jpg" class="" title="t-test">
+<p>You can see the Sig. (2-tailed) for p-value, which means that “the mean = 7” only have a probability of 0.000 to happen. (Okay…just tell me it is impossible, lol.) Therefore, I can reject the hypothesis that the average environmental knowledge of Chinese is 7 (This is what we usually called H<sub>0</sub>, or null hypothesis) because I found it is almost impossible that the average environmental knowledge of Chinese is 7 based on the p-value SPSS told me.</p>
+<p>So is it possible that the mean environmental knowledge is 5? Looks like it might be okay because 5 is not very deviated from 4.24. Following the same procedure except changing the testing value from 7 to 5 and we get the results.</p>
+<img src="/2023/04/16/t-test-and-inferential-statistics/p4.jpg" class="" title="t-test">
+<p>I was a bit surprised that “Mean environmental knowledge = 5” is also rejected. Anyway, based on the results, we should still reject this hypothesis. Then I tried 4.2 and the p-value is larger than the 0.05 criterion which is commonly used.</p>
+<img src="/2023/04/16/t-test-and-inferential-statistics/p5.jpg" class="" title="t-test">
+<p>This time we can see the p-value = 0.595. So it is very likely that mean = 4.2 is likely to happen. At least we cannot 95% sure it is not true. Therefore, we can say we cannot reject mean = 4.2. However, we cannot conclude that the population mean is 4.2. We only get a probability that 4.2 is likely to be the possible population mean. (You definitely can see from this sample, 4.2432 is the most likely one. the p-value should be very close to 1.)  And we can also only conclude that 5 and 7 is very very very unlikely to be the population mean. (But it still might be, we just don’t know from this sample.)</p>
+<p>The selection of the 0.05 is due to the consideration of type I error. Of course there are many contradictions about such an arbitrary number. But anyway, under the current statistical framework, just remember if p-value &lt; 0.05, reject the null hypothesis. For one sample t-test, the null hypothesis is the mean = the number you hypothesized.</p>
+<p>BTW, just to mention a bit about the later content. For independent t-test, the null hypothesis is the two means are equal. So, reject the H0 means the two means are not equal. In other words, the means of the two groups are different.</p>
+<p>For regression/mediation/moderation/SEM, the null hypothesis is the coefficient = 0. Thus, rejecting the H0 means the coefficient is NOT equal to 0. That is, there is relationship or the path/the mediation effect/the interaction effect is statistically “significant” (as it is highly likely that it’s not 0).</p>
+<hr />
+<p><a href="#_ftnref1">[1]</a> Actually, t-test is widely used to examine the significance of coefficients. But most of the time it seems the work of the computer. For example, the coefficients of OLS regression are tested with t-test. However, if you don’t know it’s examined by t-test, it does not affect you to use OLS.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/basic-stats-in-comm/">basic stats in comm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/statistics/">statistics</a><a href="/tags/method/">method</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2023/03/31/how-to-plot-interaction-effect-in-regression/"><span>How to plot interaction effect in regression</span></a></h3>
     
   
@@ -278,232 +375,6 @@ The example is to estimate the relationship between media use frequency and envi
 
   
     
-    <h3 class="article-title"><a href="/2023/03/01/Interesting-studies/"><span>Interesting studies</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2023/03/01/Interesting-studies/" rel="bookmark">
-        <time class="entry-date published" datetime="2023-02-28T16:24:24.000Z">
-          2023-03-01
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Some interesting research that I would like to note and share (not my research, but the studies that I read).</p>
-<h2 id="dont-bug-me-the-role-of-names-functions-and-feelings-in-shaping-childrens-and-adults-conservation-attitudes-about-unappealing-species"><a class="markdownIt-Anchor" href="#dont-bug-me-the-role-of-names-functions-and-feelings-in-shaping-childrens-and-adults-conservation-attitudes-about-unappealing-species"></a> Don’t bug me!: The role of names, functions, and feelings in shaping children’s and adults’ conservation attitudes about unappealing species</h2>
-<p>By Deborah Kelemen &amp; Sarah A. Brown, Lizette Pizza (2023), published on Journal of Environmental Psychology<br />
-<a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jenvp.2023.101990">https://doi.org/10.1016/j.jenvp.2023.101990</a><br />
-Update: 2023-02-28</p>
-<blockquote>
-<p><strong>Abstract:</strong><br />
-Current threats to biodiversity are profound, yet relatively little is systematically known from controlled studies about the factors that promote conservation attitudes, moral concern, and environmentalist behavior in relation to endangered species that are unfamiliar or aversive. In two experiments, we drew on cognitive and developmental research to explore the causal influence of scientific naming, and conceptual information about anthropocentric or biocentric functional effects on US urban adults’ (Study 1) and 9- to 11-year-old children’s (Study 2) attitudes about conserving recently discovered insects. We also explored whether negative emotional reactions outweigh conceptual information about names and functions when predicting conservation concern. In Study 1, scientific labels largely had no effect on urban adults’ baseline ambivalence about the importance of conserving unfamiliar arthropods. However, conservation concern was increased by hearing about the insects’ functional behavior, particularly anthropocentric functions that benefit humans. Adults’ feelings of disgust about the insects negatively predicted conservation attitudes; however, emotions never outweighed conceptual information in predicting adults’ attitudes or behavior. Study 2 found that, as with adults, scientific labeling information either had no, or a negative, impact on urban fourth and fifth graders’ baseline ambivalence to preserving unknown insects. However, both biocentric and anthropocentric functional information increased concern: Fourth graders were particularly moved by biocentric functions while fifth graders showed a greater anthropocentric bias. Children’s emotional reactions were also predictive. Unlike with adults, children’s feelings sometimes outweighed effects of conceptual information in predicting conservationist responses. Together, these findings illuminate developmental trajectories in conservation attitudes, especially biocentrism, in urban US children and adults. They also shed light on factors that can be manipulated (e.g., by communication specialists) to provoke conservation concern. Importantly, they clarify the role of words, functions, and feelings in shaping social and moral attitudes.</p>
-</blockquote>
-<h2 id="adherence-to-emotion-norms-is-greater-in-individualist-cultures-than-in-collectivist-cultures"><a class="markdownIt-Anchor" href="#adherence-to-emotion-norms-is-greater-in-individualist-cultures-than-in-collectivist-cultures"></a> Adherence to emotion norms is greater in individualist cultures than in collectivist cultures</h2>
-<p>By Allon Vishkin <a target="_blank" rel="noopener" href="http://et.al">et.al</a>. (2023), published on <em>Journal of Personality and Social Psychology</em><br />
-<a target="_blank" rel="noopener" href="https://doi.org/10.1037/pspi0000409">https://doi.org/10.1037/pspi0000409</a></p>
-<blockquote>
-<p><strong>Abstract</strong><br />
-It is generally assumed that there is greater pressure to conform to social norms in collectivist cultures than in individualist cultures. However, most research on cultural differences in social norms has examined norms for behaviors. Here, we examine cultural differences in norms for emotions. Relative to members of collectivist cultures, members of individualist cultures are more attuned to internal states and value them more. Therefore, we predicted that adherence to emotion norms would be greater in individualist than in collectivist cultures. In four studies with 119 samples from 69 distinct countries and over 200,000 participants, we estimated adherence to emotion norms in different cultures, and how deviation from emotion norms is associated with life satisfaction. As predicted, in countries higher in individualism, emotional experiences of individuals were more homogenous and more concordant with the emotions of others in their culture. Furthermore, in more individualist countries, deviation from the mean emotional experience was linked to lower life satisfaction. We discuss two complementary mechanisms that may underlie such differences. (PsycInfo Database Record © 2022 APA, all rights reserved).</p>
-</blockquote>
-<h2 id="anthropomorphism-in-humanrobot-interactions-a-multidimensional-conceptualization"><a class="markdownIt-Anchor" href="#anthropomorphism-in-humanrobot-interactions-a-multidimensional-conceptualization"></a> Anthropomorphism in human–robot interactions: a multidimensional conceptualization</h2>
-<p>By Rinaldo Kühne, Jochen Peter (2023), published on <em>Communication Theory</em><br />
-<a target="_blank" rel="noopener" href="https://doi.org/10.1093/ct/qtac020">https://doi.org/10.1093/ct/qtac020</a><br />
-Update: 2023-02-24</p>
-<blockquote>
-<p><strong>Abstract:</strong><br />
-With robots increasingly assuming social roles (e.g., assistants, companions), anthropomorphism (i.e., the cognition that an entity possesses human characteristics) plays a prominent role in human–robot interactions (HRI). However, current conceptualizations of anthropomorphism in HRI have not adequately distinguished between precursors, consequences, and dimensions of anthropomorphism. Building and elaborating on previous research, we conceptualize anthropomorphism as a form of human cognition, which centers upon the attribution of human mental capacities to a robot. Accordingly, perceptions related to a robot’s shape and movement are potential precursors of anthropomorphism, while attributions of personality and moral value to a robot are potential consequences of anthropomorphism. Arguing that multidimensional conceptualizations best reflect the conceptual facets of anthropomorphism, we propose, based on Wellman’s (1990) Theory-of-Mind (ToM) framework, that anthropomorphism in HRI consists of attributing thinking, feeling, perceiving, desiring, and choosing to a robot. We conclude by discussing applications of our conceptualization in HRI research.</p>
-</blockquote>
-<h2 id="awe-sparks-prosociality-in-children"><a class="markdownIt-Anchor" href="#awe-sparks-prosociality-in-children"></a> Awe Sparks Prosociality in Children</h2>
-<p>By Eftychia Stamkou, <a target="_blank" rel="noopener" href="http://et.al">et.al</a>. (2023), published on Psychology Science<br />
-<a target="_blank" rel="noopener" href="https://doi.org/10.1177/09567976221150616">https://doi.org/10.1177/09567976221150616</a><br />
-Update: 2023-02-16</p>
-<blockquote>
-<p><strong>Abstract:</strong><br />
-Rooted in the novel and the mysterious, awe is a common experience in childhood, but research is almost silent with respect to the import of this emotion for children. Awe makes individuals feel small, thereby shifting their attention to the social world. Here, we studied the effects of art-elicited awe on children’s prosocial behavior toward an out-group and its unique physiological correlates. In two preregistered studies (Study 1: N = 159, Study 2: N = 353), children between 8 and 13 years old viewed movie clips that elicited awe, joy, or a neutral (control) response. Children who watched the awe-eliciting clip were more likely to spend their time on an effortful task (Study 1) and to donate their experimental earnings (Studies 1 and 2), all toward benefiting refugees. They also exhibited increased respiratory sinus arrhythmia, an index of parasympathetic nervous system activation associated with social engagement. We discuss implications for fostering prosociality by reimagining children’s environments to inspire awe at a critical age.</p>
-</blockquote>
-<h2 id="the-effect-of-social-approval-on-perceptions-following-social-media-message-sharing-applied-to-fake-news"><a class="markdownIt-Anchor" href="#the-effect-of-social-approval-on-perceptions-following-social-media-message-sharing-applied-to-fake-news"></a> The effect of social approval on perceptions following social media message sharing applied to fake news</h2>
-<p>By Joseph B Walther, Zijian Lew, America L Edwards, Justice Quick (2022), published in <em>Journal of Communication</em><br />
-<a target="_blank" rel="noopener" href="https://doi.org/10.1093/joc/jqac033">https://doi.org/10.1093/joc/jqac033</a><br />
-Update: 2023-02-14</p>
-<blockquote>
-<p><strong>Abstract:</strong><br />
-A field experiment examined social approval in the form of Twitter “Likes” on individuals’ perceptions after retweeting a fictitious news story about a politician. The study incorporated research about feedback effects on self-perception online, partisan bias, and negativity principles. Participants read or retweeted a (verifiably false) news story via social media, and researchers appended systematic increments of Likes to the retweets. A baseline hypothesis test found no effect on perceptions due to retweeting versus simply reading a news story. Results supported a predicted three-way interaction effect between positive versus negative news story, political congruence with participants’ political party identification, and the reception of 0–22 Likes on perceptions of the politician. More Likes magnified negative perceptions of politicians, from fictitious news, when news stories were negative and focused on politicians from one’s opposite political party.</p>
-</blockquote>
-<p>Very interesting, though very surprising why the 1st hypothesis was not supported.</p>
-<h2 id="individual-inferences-in-web-based-information-environments-how-cognitive-processing-fluency-information-access-active-search-behaviors-and-task-competency-affect-metacognitive-and-task-judgments"><a class="markdownIt-Anchor" href="#individual-inferences-in-web-based-information-environments-how-cognitive-processing-fluency-information-access-active-search-behaviors-and-task-competency-affect-metacognitive-and-task-judgments"></a> Individual Inferences in Web-Based Information Environments: How Cognitive Processing Fluency, Information Access, Active Search Behaviors, and Task Competency Affect Metacognitive and Task Judgments</h2>
-<p>By Andrew J. Flanagin &amp; Zijian Lew (2022), published in <em>Media Psychology</em><br />
-<a target="_blank" rel="noopener" href="https://doi.org/10.1080/15213269.2022.2085116">https://doi.org/10.1080/15213269.2022.2085116</a><br />
-Update: 2023-02-12</p>
-<blockquote>
-<p><strong>Abstract:</strong><br />
-Online information repositories increasingly serve as memory aids in people’s lives. Access to such information stores, however, can result in false perceived equivalencies between web-based information and personal knowledge, which can in turn influence judgments of oneself, of information search tasks, and of the Internet itself. <em>Cognitive processing fluency, access to reliable web-based information</em>, and <em>actively searching for information</em> are shown in a series of experiments to be associated with judgments related to metacognition and task performance. In the context of online information repositories accessed via web search activities, people are shown to (a) overemphasize the degree to which they find the web to be a ready source of relevant information, (b) overestimate their future task performance and the ease of tasks, and © inflate their own perceived cognitive and memory abilities. Results also show that those who are least competent in task completion overestimate their relative performance, whereas the most competent underestimate theirs, and that the availability of web-based information can inflate people’s estimated performance, particularly among the more competent. Collectively, three interrelated studies add considerable new insight regarding the impacts of near-ubiquitous access to contemporary information-saturated environments.</p>
-</blockquote>
-<p>Very interesting.</p>
-<h2 id="is-e-reading-environmentally-more-sustainable-than-conventional-reading-evidence-from-a-systematic-literature-review"><a class="markdownIt-Anchor" href="#is-e-reading-environmentally-more-sustainable-than-conventional-reading-evidence-from-a-systematic-literature-review"></a> Is e-reading environmentally more sustainable than conventional reading? Evidence from a systematic literature review</h2>
-<p>By Kang, Lu &amp; Xu (2021), published in <em>Library &amp; Information Science Research</em><br />
-<a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.lisr.2021.101105">https://doi.org/10.1016/j.lisr.2021.101105</a><br />
-Update: 2023-02-10</p>
-<blockquote>
-<p><strong>Abstract:</strong><br />
-With the increasing dominance of digital reading over traditional reading, gaining an understanding of the environmental impacts of the formats has become critical. This systematic literature review synthesizes and integrates the findings of studies comparing print reading with on-screen reading. The results reveal that the environmental impacts of printed and digital media depend on the usage rates and number of readers of both types of media as well as user behaviors and other parameters, and digital reading also has its own negative environmental impacts. Finally, research gaps are identified and a research agenda is proposed, including considering environmental performance in comparison studies, empirical investigations of actual user behaviors, and environmental savings for lending and sharing materials from libraries. This study aims to clear the misconception and change the popular stereotype that “e-reading is environmentally more sustainable than conventional reading,” and to provide stakeholders with more valuable information that is necessary to make environmentally informed decisions.</p>
-</blockquote>
-<p>I never expected my two research interest could be conbined in this way. But I think the findings by these work are very plausible. I once brought iPad mini, Kindle, and iReader. However, the former two are very inconvenient for reading in my opinion. The last one is a bit better as its screen is much larger and supports handwriting. But it is broken in two months so I have to recycle it. Then I go back to buying physical books or read by phone.</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/reading/">reading</a>, <a href="/categories/reading/interesting-studies/">interesting studies</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/research/">research</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2023/02/14/Notes-on-enviornmental-psychology/"><span>Notes on enviornmental psychology</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2023/02/14/Notes-on-enviornmental-psychology/" rel="bookmark">
-        <time class="entry-date published" datetime="2023-02-14T01:48:00.000Z">
-          2023-02-14
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="environmental-psychology-an-introduction"><a class="markdownIt-Anchor" href="#environmental-psychology-an-introduction"></a> Environmental Psychology: An Introduction</h2>
-<p>By Linda Steg and Judith I. M. De Groot</p>
-<img src="/2023/02/14/Notes-on-enviornmental-psychology/a.jpg" class="" title="environment psychology">
-<ul>
-<li>Environmental influences on human behavior and well-being
-<ul>
-<li>Risk: Heuristics and biases in risk judgments; Temporal discounting of environmental risks; the psychometric paradigm</li>
-<li>Environmental stress: e.g., noise, crowding</li>
-<li>Visual landscape assessment &amp; perception</li>
-<li>Health benefits of nature</li>
-<li>Restorative environments: 1) stress recovery theory 2) attention restoration theory; 1) perceptual fluency account 2) contentedness to nature 3) micro-restorative experiences and instorative effects</li>
-<li>Ambivalence towards nature and natural landscape</li>
-<li>Wildlife: 1) the cognitive hierarchy, 2) wildlife value orientations, 3) norms &amp; attitudes towards wildlife, 4) Emotions towards wildlife.</li>
-<li>Built environments/building. Urban environmental quality</li>
-<li>Environment and quality of life.</li>
-</ul>
-</li>
-<li>Environmental behavior
-<ul>
-<li>Environmental cues
-<ul>
-<li>Goal framing theory: 1) normative goal, 2) Gain goal, 3) Hedonic goal</li>
-<li>Environmental cues ↔ normative goals</li>
-</ul>
-</li>
-<li>Measuring environmental behavior</li>
-<li>Values: 1) social value orientations, 2) Schwartz’s value theory, 3) Emergence of biospheric values</li>
-<li><strong>Social norms</strong></li>
-<li><strong>Social dilemmas</strong>
-<ul>
-<li>Types: large-scale dilemmas; resources dilemmas; public good dilemmas</li>
-<li>Motives: greed, efficiency, fairness</li>
-<li>Factors -&gt; cooperation: group size, communication, response efficacy, environmental uncertainty, social uncertainty, norms in large-scale dilemma.</li>
-</ul>
-</li>
-<li>Explaining environmental behavior: TPB, NAM, VBN theory of environmentalism, Goal Framing Theory.</li>
-<li>Habits</li>
-<li>Encouraging PEB:
-<ul>
-<li>Information strategies: providing information, goal setting, commitment, prompting, feedback</li>
-<li>Rewards &amp; penalties</li>
-<li>Persuasive strategies</li>
-<li>Acceptability of environmental policies</li>
-<li>Behavioral change</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/reading/">reading</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/environment/">environment</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
     <h3 class="article-title"><a href="/2023/02/06/About-learning-stats-in-communication/"><span>About learning stats in communication</span></a></h3>
     
   
@@ -648,231 +519,6 @@ I'll update the Chinese version when I have time.
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/statistics/">statistics</a><a href="/tags/method/">method</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2023/02/04/Notes-on-social-influence/"><span>Notes on social influence</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2023/02/04/Notes-on-social-influence/" rel="bookmark">
-        <time class="entry-date published" datetime="2023-02-04T00:23:04.000Z">
-          2023-02-04
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="social-influence-direct-and-indirect-processes"><a class="markdownIt-Anchor" href="#social-influence-direct-and-indirect-processes"></a> Social Influence: Direct and Indirect Processes</h2>
-<p>[Don’t have much time to read this book. So I only took some points that maybe useful very quickly]</p>
-<img src="/2023/02/04/Notes-on-social-influence/a.png" class="" title="social influence">
-<ul>
-<li>Social influence is thus arguably the main currency of social life.</li>
-<li>Levels of social influence:
-<ul>
-<li>Level 1 influence involves direct, person=to-person influence.</li>
-<li>Level 2 influence relies on the indirect manipulation of group norms and customs and social and cultural attitudes.</li>
-<li>Level 3 influence is the most elusive and indirect, when influence recipients are not even aware that their thoughts and behaviors have been influenced by others.</li>
-</ul>
-</li>
-<li>The envolvement of social influence</li>
-<li>Active imagery: only be adaptive when ease of imagery is possible. It will be maladaptive when such imagery is difficult.</li>
-<li>Resistance
-<ul>
-<li>Sidestepping resistance: (1) minimizing importance (2) minimizing strength of threat;</li>
-<li>Directly reducing resistance: e.g., a guarantee has monetary and persuasive value because it minimizes the buyer’s risk. Or addressing counterargument in persuasive messages.</li>
-<li>Disrupting resistance: distractions, disruptions, misdirection, etc. ELM.</li>
-<li>Turn resistance from an adversary into an ally.</li>
-</ul>
-</li>
-<li>Dynamic social influence. Simulation.</li>
-<li>Communicability. The communicability of a belief is not strictly a trait of the belief itself; it is dependent on the psychological processes of the individuals who traffic in that and other memes.
-<ul>
-<li>The perception of popularity not only conveys a means to achieve social acceptance, it also conveys information. -&gt; some ironic and troubling consequences: (1) behavioral norms may emerge and persist unsupported by beliefs or opinions consistent with those behaviors. (2) Normative behavioral strategies are serving some goal imperfectly may remain normative even if better strategies are available (e.g., the QWERTY keyboard).</li>
-</ul>
-</li>
-<li>Coercion actions. Social control motivation+The justice motive+self-presentation (assertive self-presentation and protective self-presentation)</li>
-<li>Resisting social influence [!!??]</li>
-<li>Stealing thunder [!!??]</li>
-<li>Intergroup beliefs. Perceived social consensus.</li>
-<li><strong>Social influence on memory</strong>
-<ul>
-<li>Tradition: eyewitness testimony</li>
-<li>Social comparison theory: when people feel not confident about their memory, individuals tend to rely on information implicitly or explicitly provided by others.
-<ul>
-<li>1st step: individuals could be not confident about their memories.</li>
-<li>2nd step: identify variables that could increase/decrease individuals’ confidence about their memory</li>
-<li><img src="Notes-on-social-influence/n1.png" alt="n1.png" /></li>
-</ul>
-</li>
-<li>Experiment 1: Individuals are more likely to recall the distinct items (salience of the item). Make some items salient by: (1) salient distractor items (i.e., nontools not previously projected),(2) nonsalient distractor (i.e., tools not previously projected),(3) salient targets (i.e nontools previously projected), and (4) nonsalient targets (i.e., tools previously projected). Using definite vs indefinite articles to manipulate social influence. [Don’t quite understand how these manipulation works…]</li>
-<li>Experiment 2: Decreasing confidence in memory by reducing time for elaborating information.</li>
-<li>Experiment 3: Increasing group size to increase social influence.</li>
-<li>Experiment 4: Normative vs informative influence (I don’t quite understand how the normative manipulation works). The influence is informational not normative.</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/reading/">reading</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/social-influence/">social influence</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2023/01/25/Notes-on-climate-change/"><span>Notes on climate change</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2023/01/25/Notes-on-climate-change/" rel="bookmark">
-        <time class="entry-date published" datetime="2023-01-25T12:40:00.000Z">
-          2023-01-25
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>I planed to read some books about climate change and make some notes here. Note these books are all Chinese version because I read Chinese very fast. I read these only for some basic understanding and knowledge. Chinese versions can save my time. My notes only include things that might help my research.</p>
-<h2 id="太阳底下的新鲜事20世纪人与环境的全球互动"><a class="markdownIt-Anchor" href="#太阳底下的新鲜事20世纪人与环境的全球互动"></a> 《太阳底下的新鲜事：20世纪人与环境的全球互动》</h2>
-<p>Something New Under the Sun: An Environmental History of the Twentieth-Century World</p>
-<img src="/2023/01/25/Notes-on-climate-change/f.jpg" class="" title="climate change">
-<p>First time reading environmental history, very inspiring when I read how the environmental beliefs change.</p>
-<h2 id="绿色经济学"><a class="markdownIt-Anchor" href="#绿色经济学"></a> 《绿色经济学》</h2>
-<img src="/2023/01/25/Notes-on-climate-change/e.jpg" class="" title="climate change">
-<p>A very inspiring book. I may read it again and take notes later.</p>
-<h2 id="气候赌场"><a class="markdownIt-Anchor" href="#气候赌场"></a> 《气候赌场》</h2>
-<img src="/2023/01/25/Notes-on-climate-change/d.jpg" class="" title="climate change">
-<p>A very inspiring book. I may read it again and take notes later.</p>
-<h2 id="环境与社会批判性导论"><a class="markdownIt-Anchor" href="#环境与社会批判性导论"></a> 《环境与社会：批判性导论》</h2>
-<img src="/2023/01/25/Notes-on-climate-change/c.jpg" class="" title="climate change">
-<p>I have given this book to a friend after I finished it on the airplane to the US in Aug. This is a very good book discussing the association between the environment and the society. But because I don’t own this book anymore, I’m unable to record the inspiring content now (that’s why I decided to take notes from now on, even just some words).</p>
-<h2 id="气候在变化那么社会呢"><a class="markdownIt-Anchor" href="#气候在变化那么社会呢"></a> 《气候在变化，那么社会呢》</h2>
-<img src="/2023/01/25/Notes-on-climate-change/b.jpg" class="" title="climate change">
-<p>This book introduces the role of sociology in coping with climate change. It has one chapter about communication and media.</p>
-<ul>
-<li>The change of understanding of a risk towards a phenomenon (e.g., job-related injuries and climate change)/ Conveying the risk -&gt; insurance</li>
-<li>Risk society. Credibility and legitimacy</li>
-<li>Roles: roles in climate change and the interaction between the “roles”.</li>
-<li>Capitalism and consumer-oriented society</li>
-<li>The role of science</li>
-<li>Communication and media</li>
-<li>公共知识储备</li>
-<li>Morality</li>
-<li>Quotes:
-<ul>
-<li>辨识社会风险总是以社会动员为表现形式，也就是说，表现为个人为了共同的利益聚在一起，最终形成能够撼动社会关系的集体。</li>
-<li>如果危机的诊断属于科学范畴，寻找替代方案的研究则属于社会范畴：批评只有在实践种才能产生效应。</li>
-<li>把气候问题视为社会问题，便于把表面具有差异且彼此疏离的现象联合起来。</li>
-<li>气候变化属于这种情况: 它调动了不同的社会和缘政治利害关系，成为现今社会矛盾潜在的主要来源这些现有或未来的矛盾将涉及社群甚至国家之间在地方行政区域之间(在像法国这样反差较大的国家内地区之间的差异会导致局势紧张 ，同样，在国家之间或国际关系之中(传统工业国家之间、新型工业国家之间发展中国家之间 )。<br />
-关于气候变化的科研交流是重要的因素: 惰性一一甚至是抵制一一无所作为，甚至积极抵抗是我们面对气候变化理论可能采取的态度，因为我们不想改变生活方式，也无法设定其他替代的模式。它们来自于我们的无能，我们不会提醒自己哪些事物会代替我们现有生存模式。如果我们不接受新的模式，那就无法真正采取行动。为了我们在这方面有所进展，我们需要一些学识性的资料(数据、信息、模型等 )。<br />
-关于气候变化议题，科学家和知识分子可以传播的范围不是无限的。它取决于工作条件、受到的鼓励、周围同事和社会整体(对于一名科学家而言，如果觉得自个的人趣，其研究道路就很难下去 )。科研的形成是一个学习论述和建立证据的过程有这样，科学家在汇报研究成果和提供建议时，才能到有备无患。相反，当他们面对不同的社会需求或者仅是跟其他学科的同事和实践者对话的时候，他们不定总是全副武装。如果科学提出争议，它将使用属F己的科学词汇，并非一定要受到公众传播舆论的影响如果说科学家尤其习惯于在研讨会、科学代表大和杂志上交流，那么，通常由记者和协会接力，向社广泛传播科学研究的成果，促进公众舆论的形成与了解在社会范围内“说”对于某个问题的社会关注度提升，进而构建后来的“文化特征”，是必要的先决条件无论社会流动的成因如何，社会性话题都是实现这种流动性的主要关键因素之一。就像为了形成事实一样，许多角色—甚至社会员整体–参与了社会范围内“说”的行动: 社会可以被视为永不停止的交流活动的产物。根据他们生和传播的场所不同，这些传播活动互相无视，或者互相意识到对方的存在，互相影响，互相回应，互相矛盾或瓦相支持…·</li>
-<li>社会生活由社会传播构成：社会以比较有序的方式持续地更替着流通在我们生活的世界和时代的信息。这些信息形成了指引我们方向的坐标，它们加强了我们感受、坚持和行动的方式。<br />
-我们看待和理解世界的方式(人们称之为“我们的表现形式”)是我们所处社会相互作用、相互包含的结果。因此，人不是天生的生态学家，人可以变为生态学家。但是，在哪种程度上，这些事件可以动摇我们的信仰，转变我们的行为?<br />
-全世界都在参与知识的积累和传播，但是，某些角色和领域更具有专业性，甚至比其他更加地活跃。相同地，存在生产领域的专业机构，也存在负责传播和流通信息的机构 -一即使社会分工的界限从来没有事实上那么严格。<br />
-涉及气候变化的运动和广告，这些表述旨在改变个人和集体的行为，同时，伴以警示和行动建议.因此，讨论这些信息的影响是合理的。<br />
-传播运动就是秉承这种精神：要获得有效而广泛的合作，必须让人们达成共识。<br />
-信息有助于觉悟的提升，但对于改变习惯，影响行为却远远不够：气候问题或许显而易见，但未必与人们的生活切实相关。我们可以了解风险，却无法预知它的后果。这就是气候变化的现状。</li>
-<li>社会的变化是不可预见的，也不会一直顺利，我们行动的手段也同样复杂，任何情况下，都不能对泄气让步。</li>
-</ul>
-</li>
-</ul>
-<h2 id="气候变化我与我女儿的对话"><a class="markdownIt-Anchor" href="#气候变化我与我女儿的对话"></a> 《气候变化：我与我女儿的对话》</h2>
-<img src="/2023/01/25/Notes-on-climate-change/a.jpg" class="" title="climate change">
-<p>This books is about basic knowledge of climate change, written in the form of conversations between a father and his daughter.</p>
-<ul>
-<li>Climate ≠ weather.</li>
-<li>Climate change refers to the change of <em>average</em> temperature.</li>
-<li>Scientific consensus.</li>
-<li>Greenhouse effect. But it is a natural phenomenon supporting human’s lives. Therefore, it is not naturally bad. (Complex knowledge for lay person perhaps.)</li>
-<li>Meat is a source of climate change. Food, electricity, etc., all require fossil fuels.</li>
-<li>CO<sub>2</sub> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">⇒</span></span></span></span> atmosphere + forest + sea. Therefore, the increase in the atmosphere is not that much.</li>
-<li>Disasters: more diseases, more raining, wildfires.</li>
-<li>Last generation causes the problem but they don’t need to bear the consequences.</li>
-<li>Challenges to build the new world + adaptation to the change of the world.</li>
-</ul>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/reading/">reading</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/environment/">environment</a>
     </span>
     
 
