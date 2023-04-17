@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>7. Mediation effect | Ai Pengya | Be joyful in hope, patient in affliction, faithful in prayer.</title>
+
+  
+  <meta name="author" content="Ai Pengya">
+  
+
+  
+  <meta name="description" content="Mediation effect is also called indirect effect. Namely, it is to examine whether independent variable’s “effect” on the dependent variable is through">
+  
+
+  
+  
+  <meta name="keywords" content="statistics,method">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="7. Mediation effect"/>
+
+  <meta property="og:site_name" content="Ai Pengya"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Ai Pengya" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" rel="stylesheet" type="text/css">
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Ai Pengya</a>
+    </h1>
+    <p class="site-description">Be joyful in hope, patient in affliction, faithful in prayer.</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/research">Research</a></li>
+      
+        <li><a href="/">Notes</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>7. Mediation effect</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2023/04/17/7-Mediation-effect/" rel="bookmark">
+        <time class="entry-date published" datetime="2023-04-17T10:47:47.000Z">
+          2023-04-17
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Mediation effect is also called indirect effect. Namely, it is to examine whether independent variable’s “effect” on the dependent variable is through the mediation of the mediator/mediation variable. For example, media use could improve people’s environmental friendly behavior (pro-environmental behavior, PEB). This is because media use increases people’s environmental knowledge (mediation variable), which increases people’s pro-environmental behaviors.</p>
+<img src="/2023/04/17/7-Mediation-effect/f1.png" class="" title="Mediation"> 
+<p>The way to examine the mediation effects is a bit controversial according to my current knowledge. Especially in economic field in China, I heard there is a debate about it. Anyway, we are still need to use it.</p>
+<p>Usually it requires two regression models to get a and b in the above model. To examine whether there’s indirect effect or not, it depends on whether the product of a and b is significant or not. Currently, bootstrapping method is popular to examine the mediation effect as it does not assume the distribution of the product of a and b.</p>
+<p>So we directly use PROCESS Model 4 to illustrate it, we can also see the regression models from the results. (change the model number into 4)</p>
+<img src="/2023/04/17/7-Mediation-effect/f2.png" class="" title="Mediation"> 
+<p>The first regression model, X on M:</p>
+<img src="/2023/04/17/7-Mediation-effect/f3.png" class="" title="Mediation"> 
+<p>Second regression model, X and M on Y:</p>
+<img src="/2023/04/17/7-Mediation-effect/f4.png" class="" title="Mediation"> 
+<p>And we can find the direct effect and indirect effect at the bottom</p>
+<img src="/2023/04/17/7-Mediation-effect/f5.png" class="" title="Mediation"> 
+<p>To see whether there is indirect effect is based on the BootLLCI and BootULCI, which is the 95% confidence interval of the indirect effect. The 95% confidence interval means that the probability of the true value is within this range is 95%. Remember what we say about the null hypothesis about regression test: the coefficient is 0. Similarly, if we <strong>cannot</strong> reject that the indirect effect is 0, then we cannot say there is mediation effect. So, if zero is within the 95% confidence interval, then the probability that the true value is zero is high, we cannot reject the null hypothesis. In contrast, if the 95% confidence interval does not contain zero, which means that it is highly likely that the true value is NOT zero. Therefore, the indirect effect is likely to be something not zero. Then we say the mediation effect is statistically significant.</p>
+<p>Here, we can see the 95% confidence interval is [0.006, 0.023], which does not include 0 in this range. Thus, we can say that we found the mediation of environmental knowledge between media use and pro-environmental effect is significant.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/basic-stats-in-comm/">basic stats in comm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/statistics/">statistics</a><a href="/tags/method/">method</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2023 Ai Pengya
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>
