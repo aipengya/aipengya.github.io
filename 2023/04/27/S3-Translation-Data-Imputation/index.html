@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>S2. [Chinese] Notes of Data Imputation of Rosenthal(2017) | Ai Pengya | Be joyful in hope, patient in affliction, faithful in prayer.</title>
+  <title>S3. [Chinese] Notes of Data Imputation of Rosenthal(2017) | Ai Pengya | Be joyful in hope, patient in affliction, faithful in prayer.</title>
 
   
   <meta name="author" content="Ai Pengya">
@@ -23,7 +23,7 @@ Original article: Rosenthal, S. (2017). Data Imputation. In The International En
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="S2. [Chinese] Notes of Data Imputation of Rosenthal(2017)"/>
+  <meta property="og:title" content="S3. [Chinese] Notes of Data Imputation of Rosenthal(2017)"/>
 
   <meta property="og:site_name" content="Ai Pengya"/>
 
@@ -71,7 +71,7 @@ Original article: Rosenthal, S. (2017). Data Imputation. In The International En
 
   
     
-    <h3 class="article-title"><span>S2. [Chinese] Notes of Data Imputation of Rosenthal(2017)</span></h3>
+    <h3 class="article-title"><span>S3. [Chinese] Notes of Data Imputation of Rosenthal(2017)</span></h3>
     
   
 
@@ -91,9 +91,9 @@ Original article: Rosenthal, S. (2017). Data Imputation. In The International En
   <div class="article-content">
     <div class="entry">
       
-        <h1 id="缺失值插补-data-imputation"><a class="markdownIt-Anchor" href="#缺失值插补-data-imputation"></a> 缺失值插补 | Data Imputation</h1>
-<p>Original article: Rosenthal, S. (2017). Data Imputation. In The International Encyclopedia of Communication Research Methods (eds J. Matthes, C.S. Davis and R.F. Potter). <a target="_blank" rel="noopener" href="https://doi.org/10.1002/9781118901731.iecrm0058">https://doi.org/10.1002/9781118901731.iecrm0058</a></p>
-<h2 id="缺失值分类"><a class="markdownIt-Anchor" href="#缺失值分类"></a> 缺失值分类</h2>
+        <p>缺失值插补 | Data Imputation<br />
+Original article: Rosenthal, S. (2017). Data Imputation. In The International Encyclopedia of Communication Research Methods (eds J. Matthes, C.S. Davis and R.F. Potter). <a target="_blank" rel="noopener" href="https://doi.org/10.1002/9781118901731.iecrm0058">https://doi.org/10.1002/9781118901731.iecrm0058</a></p>
+<h3 id="缺失值分类"><a class="markdownIt-Anchor" href="#缺失值分类"></a> 缺失值分类</h3>
 <ul>
 <li>
 <p>完全随机缺失 (Missing completely at random, MCAR)</p>
@@ -116,7 +116,7 @@ Original article: Rosenthal, S. (2017). Data Imputation. In The International En
 </ul>
 </li>
 </ul>
-<h2 id="删除法case-deletion"><a class="markdownIt-Anchor" href="#删除法case-deletion"></a> 删除法（case deletion）</h2>
+<h3 id="删除法case-deletion"><a class="markdownIt-Anchor" href="#删除法case-deletion"></a> 删除法（case deletion）</h3>
 <ul>
 <li>
 <p>最简单的处理方法**</p>
@@ -136,7 +136,7 @@ Original article: Rosenthal, S. (2017). Data Imputation. In The International En
 </ul>
 </li>
 </ul>
-<h2 id="基础插补方法"><a class="markdownIt-Anchor" href="#基础插补方法"></a> 基础插补方法</h2>
+<h3 id="基础插补方法"><a class="markdownIt-Anchor" href="#基础插补方法"></a> 基础插补方法</h3>
 <ul>
 <li>
 <p><strong>均值插补</strong></p>
@@ -189,7 +189,7 @@ Original article: Rosenthal, S. (2017). Data Imputation. In The International En
 </ul>
 </li>
 </ul>
-<h2 id="高级插补方法"><a class="markdownIt-Anchor" href="#高级插补方法"></a> 高级插补方法</h2>
+<h3 id="高级插补方法"><a class="markdownIt-Anchor" href="#高级插补方法"></a> 高级插补方法</h3>
 <ul>
 <li>
 <p><strong>期望最大算法（Expectation maximization，EM）</strong></p>
@@ -216,14 +216,14 @@ Original article: Rosenthal, S. (2017). Data Imputation. In The International En
 </ul>
 </li>
 </ul>
-<h2 id="限制还是兼容"><a class="markdownIt-Anchor" href="#限制还是兼容"></a> 限制还是兼容？</h2>
+<h3 id="限制还是兼容"><a class="markdownIt-Anchor" href="#限制还是兼容"></a> 限制还是兼容？</h3>
 <ul>
 <li>Restrictive versus inclusive methods [这里按照自己理解翻译的，没去查]</li>
 <li>可以发现很多插补方法都是利用模型估计插补的，利用模型估计就需要选择使用哪些变量去估计缺失值。</li>
 <li>restrictive的方法就是选择一部分变量作为自变量去估计，选择的自变量是跟需要估计的变量相关。</li>
 <li>inclusive的方法就是再使用辅助变量估计参数，不管自变量与需要估计的变量有没有关系。这种方法更好，因为避免了遗漏变量的问题（放入无关变量不会有什么损失）。</li>
 </ul>
-<h2 id="计划中缺失planned-missingness"><a class="markdownIt-Anchor" href="#计划中缺失planned-missingness"></a> 计划中缺失（Planned missingness）</h2>
+<h3 id="计划中缺失planned-missingness"><a class="markdownIt-Anchor" href="#计划中缺失planned-missingness"></a> 计划中缺失（Planned missingness）</h3>
 <ul>
 <li>
 <p>有时问卷调查中会使用有计划缺失的研究设计，比如split-ballot, matrix sampling和three-form design。这样的研究设计中，被调查者只回答一部分问题，剩下的问题不回答，所以产生了计划中的缺失。</p>
@@ -235,7 +235,7 @@ Original article: Rosenthal, S. (2017). Data Imputation. In The International En
 <p>但是很多时候我们遇到的都是非计划内的缺失，此时完全随机缺失未必满足，这时就需要用一些比较稳健的插补方法，比如EM，FIML和MI这样的，以减少偏误。有时一些计划中的缺失的研究设计也会导致类似问题（不是完全随机缺失），这时也要用到这些比较稳健的插补方法。</p>
 </li>
 </ul>
-<h2 id="不合理值以及取整-implausible-values-and-rounding"><a class="markdownIt-Anchor" href="#不合理值以及取整-implausible-values-and-rounding"></a> 不合理值以及取整 （Implausible values and rounding）</h2>
+<h3 id="不合理值以及取整-implausible-values-and-rounding"><a class="markdownIt-Anchor" href="#不合理值以及取整-implausible-values-and-rounding"></a> 不合理值以及取整 （Implausible values and rounding）</h3>
 <ul>
 <li>
 <p>插补后的数据有时会有一些不合理值，比如原本的测量是1-7的Likert scale，但是插补完之后出现不在这个范围之内的（e.g., 负值）。SPSS的MI功能可以让我们限制缺失值插补的范围，但是这样的限制可能会带来偏误。一般来说，当缺失值插补产生了一些不合理值的时候，不需要调整这些被插补的值。</p>
